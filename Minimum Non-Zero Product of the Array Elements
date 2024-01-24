@@ -1,0 +1,17 @@
+#define mod 1000000007
+typedef long long ll;
+
+class Solution {
+public:
+    ll power(ll a , ll b)
+    {
+        ll res = 1;
+        while(b)
+        {
+            if(b%2==1) // odd b&1==1
+             res = (res%mod * a%mod)%mod;
+            a = (a%mod * a%mod)%mod;
+            b=b/2; // b = b>>1 
+        }
+        return res;
+    }
